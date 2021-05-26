@@ -1,0 +1,12 @@
+<app-spinner *ngIf="loading"></app-spinner>
+
+<div class="mb-3">
+    <input type="email" class="form-control" id="exampleFormControlInput1"
+        placeholder="Ingrese el nombre de un Digimon">
+</div>
+
+<div class="row d-flex justify-content-around">
+    <div *ngFor="let digimon of listDigimons" class="col-lg-3" style="margin: 30px;">
+        <app-card-digimon [digimon]="digimon"></app-card-digimon>
+    </div>
+</div>
