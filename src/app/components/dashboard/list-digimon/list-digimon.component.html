@@ -1,12 +1,31 @@
 <app-spinner *ngIf="loading"></app-spinner>
 
-<div class="mb-3">
-    <input type="email" class="form-control" id="exampleFormControlInput1"
-        placeholder="Ingrese el nombre de un Digimon">
-</div>
-
 <div class="row d-flex justify-content-around">
     <div *ngFor="let digimon of listDigimons" class="col-lg-3" style="margin: 30px;">
         <app-card-digimon [digimon]="digimon"></app-card-digimon>
     </div>
 </div>
+
+<div *ngIf="listDigimons.length > 0" class="d-flex justify-content-center mt-2">
+    <ul class="pagination">
+        <li class="page-item" *ngIf="disminuirPaginaClass()">
+            <a class="page-link" (click)="disminuirPagina()">&laquo;Anterior</a>
+        </li>
+
+        <li class="page-item" *ngIf="aumentarPaginaClass()">
+            <a class="page-link" (click)="aumentarPagina()">Siguiente&raquo;</a>
+        </li>
+    </ul>
+</div>
+
+<!-- <div *ngIf="listDigimons.length > 0" class="d-flex justify-content-center mt-2">
+    <ul class="pagination pagination-lg">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-disabled="true">Previous</a>
+        </li>
+
+        <li class="page-item">
+            <a class="page-link" (click)="aumentarPagina()">Next</a>
+        </li>
+    </ul>
+</div> -->

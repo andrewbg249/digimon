@@ -22,13 +22,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DigimonComponent,
     ListDigimonComponent,
     SpinnerComponent,
-    CardDigimonComponent
+    CardDigimonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

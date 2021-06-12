@@ -1,3 +1,7 @@
 .spinner-color {
   background-color: #f05f44;
 }
+
+.pagination{
+  cursor: pointer;
+}
