@@ -1,3 +1,4 @@
+<app-search-bar (nombreDigimon)="getDigimon($event)"></app-search-bar>
 <app-spinner *ngIf="loading"></app-spinner>
 
 <div class="row d-flex justify-content-around">
@@ -6,8 +7,8 @@
     </div>
 </div>
 
-<div *ngIf="listDigimons.length > 0" class="d-flex justify-content-center mt-2">
-    <ul class="pagination">
+<div *ngIf="listDigimons.length > 1" class="d-flex justify-content-center mt-2">
+    <ul class="pagination pagination-lg">
         <li class="page-item" *ngIf="disminuirPaginaClass()">
             <a class="page-link" (click)="disminuirPagina()">&laquo;Anterior</a>
         </li>
@@ -18,14 +19,6 @@
     </ul>
 </div>
 
-<!-- <div *ngIf="listDigimons.length > 0" class="d-flex justify-content-center mt-2">
-    <ul class="pagination pagination-lg">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-disabled="true">Previous</a>
-        </li>
-
-        <li class="page-item">
-            <a class="page-link" (click)="aumentarPagina()">Next</a>
-        </li>
-    </ul>
-</div> -->
+<div *ngIf="listDigimons.length == 1" class="d-flex justify-content-center mb-4">
+    <div (click)="regresar()" class="btn btn-primary btn-lg btn-block">Regresar</div>
+</div>

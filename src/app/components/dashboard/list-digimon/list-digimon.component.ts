@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DigimonService } from '../../../services/digimon.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { DigimonService } from '../../../services/digimon.service';
 })
 export class ListDigimonComponent implements OnInit {
 
+  @Input() nameDigimon: string
   listDigimons = [];
   loading = false;
   digimonsPorPagina = 9;
@@ -80,5 +81,19 @@ export class ListDigimonComponent implements OnInit {
     } else {
       return true;
     }
+  }
+
+  getDigimon(nombreDigimon: string): void{
+    this._digimonService.getDigimon(nombreDigimon).subscribe(data => {
+      this.loading = true
+      setTimeout(() => {
+        this.loading = false
+        this.listDigimons = data;
+      }, 2000)
+    })
+  }
+
+  regresar(): void{
+    this.getDigimons()
   }
 }
