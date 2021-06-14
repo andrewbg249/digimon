@@ -1,13 +1,13 @@
-<div class="jumbotron">
-    <form>
-        <div class="row">
-            <div class="col-lg-8">
-                <input type="text" class="form-control form-control-lg form-control-block" #digimonName
-                    placeholder="Busca un Digimon" name="img" autocomplete="off">
-            </div>
-            <div class="col-lg-4">
-                <button (click)="buscarDigimon(digimonName.value)" type="submit" class="btn btn-primary btn-lg btn-block">Buscar</button>
-            </div>
+<form>
+    <div class="row justify-content-md-center">
+        <div class="col-lg-6">
+            <input type="text" class="form-control form-control-lg form-control-block" #digimonName
+                placeholder="Busca un Digimon" name="img" autocomplete="off">
         </div>
-    </form>
-</div>
+        <div class="col-lg-3">
+            <button (click)="buscarDigimon(digimonName.value)" type="submit"
+                class="btn btn-primary btn-lg btn-block">Buscar</button>
+        </div>
+
+    </div>
+</form>
